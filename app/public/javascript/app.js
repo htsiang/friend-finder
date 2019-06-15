@@ -115,7 +115,10 @@ function matchFriends() {
                 potentialFriendScoreComparison += Math.abs(applicantData.scores[j]-data[i].scores[j]);
             };
 
-            if(potentialFriendScoreComparison<potentialFriendScoreAnswer) {
+            if(data[i].name===applicantData.name) {
+                potentialFriendScoreComparison = 0;
+            }
+            else if(potentialFriendScoreComparison<potentialFriendScoreAnswer) {
                 potentialFriendScoreAnswer = potentialFriendScoreComparison;
                 potentialFriend = data[i].name;
                 potentialFriendScoreComparison = 0;

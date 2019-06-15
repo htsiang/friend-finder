@@ -77,6 +77,8 @@ $(document).ready(function() {
             alert("Please provide an answer to all 10 questions.");
         }
         else {
+            matchFriends();
+
             $.post("/api/friends", applicantData)
                 .then(function(data) {
                     if(data) {
@@ -87,8 +89,6 @@ $(document).ready(function() {
                         alert("Friend data did not send.");
                     };
                 });
-            
-            matchFriends();
         };
     });
 });
